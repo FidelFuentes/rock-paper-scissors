@@ -1,0 +1,95 @@
+<html>
+    <body>
+        
+        <script>
+            /* necesito una funcion que de forma random devuelva rock paper sissor
+             necesito una funcion que haga jugadas random
+             que retorne rock
+            que retorne scsissor
+            que retorne paper */
+
+         
+
+           /* function randomnumber(){
+              
+                 return Math.floor((Math.random() *3) + 1)
+               
+            }
+            
+            
+            function computerPlay(randomnumber){
+                
+                if (randomnumber == 1) { return 'rock'}
+                else if (randomnumber == 2) { return 'paper'}
+                else if ( randomnumber== 3) { return 'scissors'}
+
+            }
+            
+            */
+var countC=0;
+var countH=0;
+            function computerPlay(){
+          
+                let num= Math.floor((Math.random() *3) + 1);
+                if (num == 1) { return "rock"}
+                else if (num == 2) { return "paper"}
+                else if ( num== 3) { return "scissors"}
+
+
+            }
+            function playRound(playerSelection, computerSelection) {
+                if (playerSelection == "rock" && computerSelection== "paper"){ countC++;return "You Lose! Paper beats Rock"} 
+                else if (playerSelection == "rock" && computerSelection== "scissors"){ countH++; return"You win! Rocks beats Scissors"}
+                else if (playerSelection == "rock" && computerSelection== "rock"){ return "It is a tie!"}
+                else if (playerSelection == "paper" && computerSelection== "paper"){return "It is a tie!"}
+                else if (playerSelection == "paper" && computerSelection== "rock"){ countH++;return "You Win! Paper beats Rocks"}
+                else if (playerSelection == "paper" && computerSelection== "scissors"){  countC++;return "You Lose! Scissors beats Paper"}
+                else if (playerSelection == "scissors" && computerSelection== "paper"){ countH++; return "You Win! Scissors beats Paper"}
+                else if (playerSelection == "scissors" && computerSelection== "rock"){countC++;return "You lose! Rock beats Scissors"}
+                else if (playerSelection == "scissors" && computerSelection== "scissors"){return "It is a tie!"}
+  
+}
+
+const playerSelection = prompt("rock - paper -scissors");
+const computerSelection = computerPlay();
+console.log(playRound(playerSelection, computerSelection));
+
+
+
+/* necesito una funcion game
+que contenga la funcion previa
+que se jueguen 5 rondas
+que de un resultado
+que diga un ganador */
+
+function game(){
+    console.log (playRound(playerSelection, computerSelection));
+     console.log (playRound(playerSelection, computerSelection));
+     console.log (playRound(playerSelection, computerSelection));
+     console.log (playRound(playerSelection, computerSelection));
+     console.log (playRound(playerSelection, computerSelection));
+   
+   
+    
+
+
+
+if (countC > countH){ return "The winner is the Computer" }
+else if ( countH> countC){return "You are the Winner" }
+else {return "it is a draw!"}
+
+
+}
+
+console.log(countH)
+console.log(countC)
+
+console.log(game())
+
+
+
+
+
+        </script>
+    </body>
+</html>
